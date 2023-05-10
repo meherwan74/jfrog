@@ -1,0 +1,47 @@
+JFrog 
+JFrog is used store the artifacts.
+Why you need to store the artifact means if you want to change anything in the code we need to write the entire code. If you save the artifact it will be easy to edit the code. So that purpose we use jfrog to store the artifact.
+We use public repositories like jfrog, nexus, also we internal storages.
+Create a jfog server 
+Jfrog pre requisite is min 4gb ram and 16gb of hard disk and java.
+Open browser fgrog artifactory oss jfrog.com
+Open server 
+$ sudo -i
+# yum install -y java-1.8.0*
+# java -version 
+# yum install wget
+Oprn browser goto jfrog pagelinux installation tar.gz
+# wget (jfrog link)
+# lshttps://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/[RELEASE]/jfrog-artifactory-oss-[RELEASE]-linux.tar.gz
+# tar -xvf (tra file)
+# ls
+# cd (dir)
+# ls
+#  cd app 
+# ls 
+# cd bin
+# ls
+# /.artifactory.sh
+Shell scrip running
+give port numbers to server
+Default jrog port number is 8081 if might run on 8082
+open browser (public_ip:8082)
+Username:admin
+Password:password
+At left click on repository 
+Create user = manage users users +new user 
+Username (jenkins) Email (jenkins@gmail.com)
+Roles:
+Admin platform Password
+Cerate user
+(session 28)
+Open Jenkins server  Open Jenkins in browser.
+Goto manage Jenkins  manage plugins  select artifactory plugin
+Goto configure system  in jfrog give jfrog instance details in jfrog platform instance  give private ip In instance ID  Copy url of jfrog paste in Jenkins.
+Default Deployer Credentials :
+Username : Jenkins
+Password : Jenkins@123
+It shows current version of JFrog  Apply and save
+Open sample job in Jenkins  Configure  source code management  Build (install)  Post Build Actions  Deploy Artifacts to artifactory  Refresh repository  apply and save
+Here you see artifactory build info  build now  see console output  After build success  Check build info successfully deployed.
+Browse it in artifactory under ……link……..
